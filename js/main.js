@@ -16,9 +16,9 @@ themeToggle.addEventListener("click", () => {
   updateThemeIcon(newTheme)
 })
 
-function updateThemeIcon(theme) {
+/*function updateThemeIcon(theme) {
   themeIcon.textContent = theme === "light" ? "🌙" : "☀️"
-}
+}*/
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
