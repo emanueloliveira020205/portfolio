@@ -1,9 +1,9 @@
 // Theme Toggle
-/*const themeToggle = document.getElementById("themeToggle")
-const themeIcon = document.querySelector(".theme-icon")
+//const themeToggle = document.getElementById("themeToggle")
+//const themeIcon = document.querySelector(".theme-icon")
 const html = document.documentElement
 
-const currentTheme = localStorage.getItem("theme") || "dark"
+const currentTheme = "dark"
 html.setAttribute("data-theme", currentTheme)
 updateThemeIcon(currentTheme)
 
@@ -36,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       })
     }
   })
-})*
+})
 
 // Intersection Observer for Fade-in Animations
 const observerOptions = {
