@@ -13,7 +13,7 @@ themeToggle.addEventListener("click", () => {
 
   html.setAttribute("data-theme", newTheme)
   localStorage.setItem("theme", newTheme)
-  updateThemeIcon(newTheme)
+  //updateThemeIcon(newTheme)
 })
 
 /*function updateThemeIcon(theme) {
