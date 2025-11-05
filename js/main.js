@@ -5,7 +5,7 @@ const html = document.documentElement
 
 const currentTheme = "dark"
 html.setAttribute("data-theme", currentTheme)
-updateThemeIcon(currentTheme)
+//updateThemeIcon(currentTheme)
 
 themeToggle.addEventListener("click", () => {
   const currentTheme = html.getAttribute("data-theme")
