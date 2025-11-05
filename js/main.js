@@ -6,8 +6,6 @@ const html = document.documentElement
 const currentTheme = "dark"
 html.setAttribute("data-theme", currentTheme)
 //updateThemeIcon(currentTheme)
-html.setAttribute("data-theme", newTheme)
-localStorage.setItem("theme", newTheme)
 
 /*themeToggle.addEventListener("click", () => {
   const currentTheme = html.getAttribute("data-theme")
