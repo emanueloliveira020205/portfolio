@@ -6,15 +6,17 @@ const html = document.documentElement
 const currentTheme = "dark"
 html.setAttribute("data-theme", currentTheme)
 //updateThemeIcon(currentTheme)
+html.setAttribute("data-theme", newTheme)
+localStorage.setItem("theme", newTheme)
 
-themeToggle.addEventListener("click", () => {
+/*themeToggle.addEventListener("click", () => {
   const currentTheme = html.getAttribute("data-theme")
   const newTheme = currentTheme === "light" ? "dark" : "light"
 
   html.setAttribute("data-theme", newTheme)
   localStorage.setItem("theme", newTheme)
   //updateThemeIcon(newTheme)
-})
+})*/
 
 /*function updateThemeIcon(theme) {
   themeIcon.textContent = theme === "light" ? "🌙" : "☀️"
