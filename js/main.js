@@ -84,6 +84,8 @@ window.addEventListener("scroll", () => {
   }
 })
 
+
+
 // Add loading animation
 window.addEventListener("load", () => {
   document.body.style.opacity = "0"
@@ -93,6 +95,115 @@ window.addEventListener("load", () => {
   }, 100)
 })
 
+const galleries = {
+  1: ["img/4cows_login.png", "img/4cows_cowPage.png", "img/4cows_uso.png", "video/4cows.mp4"],
+  2: ["img/scoreboard.jpg", "img/controlboardMenu.png", "img/controlboardInGame.png", "img/controlboardInGameDragDrop.png"],
+  3: ["img/gs-server.png", "img/gs-serverContainer.png", "img/gs-serverSettings.png"],
+  4: ["img/glacierSystems.png", "img/glacierSystems2.png"],
+  5: ["img/pedro.png", "img/pedro2.png"],
+  6: ["img/battista.png", "img/battista2.png"]
+};
+
+let currentGallery = [];
+let currentIndex = 0;
+
+function openGallery(id) {
+  currentGallery = galleries[id] || [];
+  currentIndex = 0;
+  if (currentGallery.length === 0) return;
+
+  document.body.style.overflow = 'hidden';
+  const modal = document.getElementById('projectModal');
+  updateMedia();
+  modal.style.display = 'flex';
+}
+
+function closeGallery() {
+  const modal = document.getElementById('projectModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+
+  // Pausar vídeo se estiver ativo
+  const video = document.querySelector('#modalVideo');
+  if (video) video.pause();
+}
+
+function nextImage() {
+  if (currentGallery.length === 0) return;
+  currentIndex = (currentIndex + 1) % currentGallery.length;
+  updateMedia();
+}
+
+function prevImage() {
+  if (currentGallery.length === 0) return;
+  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+  updateMedia();
+}
+
+function updateMedia() {
+  const container = document.querySelector('.modal-gallery');
+  const currentFile = currentGallery[currentIndex];
+
+  // limpar anterior
+  container.querySelectorAll('img, video').forEach(el => el.remove());
+
+  let mediaEl;
+  if (currentFile.endsWith('.mp4') || currentFile.endsWith('.webm') || currentFile.endsWith('.mov')) {
+    mediaEl = document.createElement('video');
+    mediaEl.id = 'modalVideo';
+    mediaEl.src = currentFile;
+    mediaEl.controls = true;
+    mediaEl.autoplay = true;
+  } else {
+    mediaEl = document.createElement('img');
+    mediaEl.id = 'modalImage';
+    mediaEl.src = currentFile;
+    mediaEl.alt = 'Imagem do Projeto';
+  }
+
+  mediaEl.style.maxWidth = '100%';
+  mediaEl.style.maxHeight = '80vh';
+  mediaEl.style.borderRadius = '12px';
+  mediaEl.style.objectFit = 'contain';
+  mediaEl.style.display = 'block';
+  mediaEl.style.margin = '0 auto';
+
+  // inserir antes dos botões para manter ordem visual
+  const prevBtn = container.querySelector('.prev-btn');
+  container.insertBefore(mediaEl, prevBtn.nextSibling);
+}
+
+window.onclick = (event) => {
+  const modal = document.getElementById("projectModal");
+  if (event.target == modal) {
+    closeGallery();
+  }
+};
+
+function openMedia(type, src) {
+  const modal = document.getElementById('mediaModal');
+  const container = document.getElementById('mediaContainer');
+  container.innerHTML = '';
+
+  if (type === 'img') {
+    container.innerHTML = `<img src="${src}" alt="Media">`;
+  } else {
+    container.innerHTML = `
+      <iframe 
+        src="${src}" 
+        frameborder="0" 
+        allowfullscreen
+        allow="autoplay; encrypted-media">
+      </iframe>`;
+  }
+
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('mediaModal').style.display = 'none';
+  document.getElementById('mediaContainer').innerHTML = '';
+}
 // Console message for developers
 console.log("%c👋 Olá, desenvolvedor!", "font-size: 20px; font-weight: bold; color: #0071e3;")
 console.log("%cGostou do código? Vamos trabalhar juntos!", "font-size: 14px; color: #6e6e73;")

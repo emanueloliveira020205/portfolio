@@ -23,7 +23,8 @@
   --spacing-xl: 6rem;
 
   /* Typography */
-  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --font-size-xs: 0.875rem;
   --font-size-sm: 1rem;
   --font-size-md: 1.125rem;
@@ -64,7 +65,8 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   line-height: 1.6;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color var(--transition-normal),
+    color var(--transition-normal);
   overflow-x: hidden;
 }
 
@@ -174,12 +176,20 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   z-index: 1;
 }
 
 [data-theme="dark"] .hero::before {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .hero-content {
@@ -332,12 +342,20 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
   z-index: 1;
 }
 
 [data-theme="dark"] .projects::before {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 .projects .container {
@@ -356,7 +374,8 @@ section {
   background-color: var(--color-surface);
   border-radius: 16px;
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .project-card:hover {
@@ -438,7 +457,7 @@ section {
 }
 
 [data-theme="dark"] .gallery {
-  background-image: url("../img/gallery-bg.jpg");
+  background-image: url("../img/video_background.jpg");
 }
 
 .gallery::before {
@@ -460,21 +479,23 @@ section {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
 }
 
 .gallery-item {
-  aspect-ratio: 1;
+  aspect-ratio: auto;
   border-radius: 16px;
   overflow: hidden;
   background-color: var(--color-border);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+  max-height: 55vh;
 }
 
 .gallery-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.1);
   box-shadow: var(--shadow-lg);
 }
 
@@ -484,6 +505,9 @@ section {
   object-fit: cover;
 }
 
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
 /* Contact Section */
 .contact {
   text-align: center;
@@ -535,6 +559,13 @@ section {
   justify-content: center;
 }
 
+.footer-links a img {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text-secondary);
+  transition: fill var(--transition-fast);
+}
+
 .footer-links a:hover {
   color: var(--color-text-primary);
   transform: translateY(-2px);
@@ -555,6 +586,174 @@ section {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.modal-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-gallery img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.close-btn,
+.prev-btn,
+.next-btn {
+  position: fixed; /* ← muda isto! */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1100; /* garantir que fica acima */
+}
+
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Posições fixas */
+.close-btn {
+  top: 30px;
+  right: 40px;
+  font-size: 1.8rem;
+}
+
+.prev-btn {
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-btn {
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Ícones mais subtis */
+.prev-btn::before {
+  content: "‹";
+}
+
+.next-btn::before {
+  content: "›";
+}
+
+/* Fechar com estilo */
+.close-btn::before {
+  content: "×";
+}
+
+/* Ícone de play sobre vídeos */
+.video-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.play-icon {
+  font-size: 3rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.video-item:hover .play-overlay {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.video-item:hover .play-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal media ajustado */
+.modal iframe,
+.modal img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+/* Controlo extra para iframes de vídeo */
+#mediaContainer {
+  position: relative;
+  width: 90vw;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9; /* Mantém o vídeo widescreen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mediaContainer iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
 }
 
 /* Responsive Design */

@@ -21,7 +21,7 @@
             <div class="nav-links">
                 <a href="#sobre">Sobre</a>
                 <a href="#projetos">Projetos</a>
-                <a href="#galeria">Galeria</a>
+                <a href="#galeria">Vídeo</a>
                 <a href="#contacto">Contacto</a>
                 <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
@@ -52,18 +52,20 @@
             </div>
             <div class="about-content fade-in">
                 <p class="about-text">
-                    Sou um desenvolvedor apaixonado por criar soluções digitais elegantes e funcionais.
-                    Trabalho com <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>Node.js</strong> e tenho
-                    experiência profunda em <strong>sistemas Linux</strong>.
+                    Sou um desenvolvedor apaixonado por tecnologia! Se existir uma porta <strong>USB-C</strong>,
+                    provavelmente já adoro! O meu foco principal é o <strong>frontend</strong> e o <strong>web
+                        development</strong>.
+                    Trabalho com <strong>PHP</strong>, <strong>JavaScript</strong> e <strong>Node.js</strong>, mas estou
+                    sempre disposto a evoluir e a conhecer novas frameworks.
                 </p>
                 <p class="about-text">
-                    Além da programação, tenho experiência em <strong>eletrónica</strong>, especialmente na
-                    montagem e integração de painéis LED. Gosto de explorar <strong>redes sociais</strong> e
-                    fazer <strong>edição de vídeo</strong> para criar conteúdo envolvente.
+                    Tenho diversos conhecimentos em <strong>Linux</strong> (apesar das dores de cabeça que às vezes
+                    traz...). Adquiri experiência em <strong>eletrónica</strong> com a assemblagem de painéis LED,
+                    mas... pronto, não gosto de sujar as mãos! 😉
                 </p>
                 <p class="about-text">
-                    Acredito que a tecnologia deve ser acessível, intuitiva e bonita. Cada projeto é uma
-                    oportunidade de combinar funcionalidade com design minimalista.
+                    Fora da *shell*, gosto de explorar <strong>redes sociais</strong> e dedicar-me à <strong>edição de
+                        vídeo</strong>. A criatividade nunca para!
                 </p>
             </div>
         </div>
@@ -93,8 +95,7 @@
                             <span class="tag">CSS</span>
                             <span class="tag">MySQL</span>
                         </div>
-                        <a href="#" class="project-link">Ver Projeto →</a>
-                        <a href="#" class="project-link">Ver Vídeo →</a>
+                        <a href="#" class="project-link" onclick="openGallery(1)">Ver Projeto →</a>
                     </div>
                 </div>
 
@@ -112,7 +113,7 @@
                             <span class="tag">JavaScript</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="#" class="project-link">Ver Vídeo →</a>
+                        <a href="#" class="project-link" onclick="openGallery(2)">Ver Projeto →</a>
                     </div>
                 </div>
 
@@ -132,12 +133,14 @@
                             <span class="tag">JavaScript</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="#" class="project-link">Ver no GitHub →</a>
+                        <a href="#" class="project-link" onclick="openGallery(3)">Ver Projeto →</a>
                     </div>
                 </div>
+            </div>
 
+            <div class="projects-grid">
                 <div class="project-card fade-in">
-                    <div class="project-image">
+                    <div class=" project-image">
                         <img src="img/glacierSystems.png" alt="Projeto 4">
                     </div>
                     <div class="project-content">
@@ -171,23 +174,22 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="img/battista.png" alt="Projeto 4">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Website Influencer Battista</h3>
-                        <p class="project-description">Website para o influencer Battista (@thisisbattista)</p>
-                        <div class="project-tags">
-                            <span class="tag">PHP</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">HTML</span>
-                        </div>
-                        <a href="https://www.pedro-moreira.pt/" target="_blank" class="project-link">Visitar
-                            Website →</a>
-                    </div>
+                <!-- <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="img/battista.png" alt="Projeto 4">
                 </div>
+                <div class="project-content">
+                    <h3 class="project-title">Website Influencer Battista</h3>
+                    <p class="project-description">Website para o influencer Battista (@thisisbattista)</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">HTML</span>
+                    </div>
+                    <a href="https://www.pedro-moreira.pt/" target="_blank" class="project-link">Visitar
+                        Website →</a>
+                </div>-->
             </div>
         </div>
     </section>
@@ -196,31 +198,63 @@
     <section class="gallery" id="galeria">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Galeria</h2>
-                <p class="section-description">Momentos e trabalhos capturados</p>
+                <h2 class="section-title">Redes Sociais</h2>
+                <p class="section-description">Os meus Trabalhos no Digital</p>
             </div>
+
             <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Workspace">
+                <div class="gallery-item fade-in video-item"
+                    onclick="openMedia('youtube', 'https://www.youtube.com/embed/Yfk-Su9zAHQ')">
+                    <img src="img/video_thumb1.png" alt="Vídeo YouTube">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="LED Panel">
+
+                <!-- Vídeo do YouTube -->
+                <div class="gallery-item fade-in video-item"
+                    onclick="openMedia('youtube', 'https://www.youtube.com/embed/SsZJa0thusw')">
+                    <img src="img/video_thumb2.png" alt="Vídeo YouTube">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Coding">
+            </div>
+
+            <div class="gallery-grid" style=" grid-template-columns: repeat(3, 1fr);">
+                <!-- Reel do Instagram -->
+                <div class="gallery-item fade-in video-item"
+                    onclick="openMedia('reel', 'https://www.youtube.com/embed/FwhxxgQqddA')">
+                    <img src="img/reel_thumb2.png" alt="Reel Instagram">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Electronics">
+                <div class="gallery-item fade-in video-item"
+                    onclick="openMedia('reel', 'https://www.youtube.com/embed/TRubPTnK9m4')">
+                    <img src="img/reel_thumb1.png" alt="Reel Instagram">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Server">
-                </div>
-                <div class="gallery-item fade-in">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Video Production">
+                <div class="gallery-item fade-in video-item"
+                    onclick="window.open('https://www.instagram.com/reel/DPWqhvBjFsx/', '_blank')">
+                    <img src="img/reel_thumb3.png" alt="Reel Instagram">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal (usa o mesmo que já tinhas, mas com suporte multimédia) -->
+    <div class="modal" id="mediaModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()"></button>
+            <div id="mediaContainer"></div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact" id="contacto">
@@ -228,42 +262,51 @@
             <div class="contact-content fade-in">
                 <h2 class="contact-title">Vamos trabalhar juntos?</h2>
                 <p class="contact-description">Estou sempre disponível para novos projetos e colaborações.</p>
-                <a href="mailto:emanuel@example.com" class="btn-primary">Enviar Email</a>
+                <a href="mailto:emanueloliveira2205@hotmail.com" class="btn-primary">Enviar Email</a>
             </div>
         </div>
     </section>
+
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery()"></span>
+            <div class="modal-gallery">
+                <button class="prev-btn" onclick="prevImage()"></button>
+                <img id="modalImage" src="" alt="Imagem do Projeto">
+                <button class="next-btn" onclick="nextImage()"></button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="https://github.com/emanueloliveira" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
+                    <a href="https://wa.me/916931794" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 32 32" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title>whatsapp</title>
+                                <path
+                                    d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z">
+                                </path>
+                            </g>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/in/emanueloliveira" target="_blank" rel="noopener noreferrer"
-                        aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/emanuel-oliveira-4a909a282" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                             </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/emanueloliveira" target="_blank" rel="noopener noreferrer"
-                        aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                            </path>
                         </svg>
                     </a>
                     <a href="mailto:emanuel@example.com" aria-label="Email">
