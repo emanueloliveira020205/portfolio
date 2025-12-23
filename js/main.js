@@ -200,6 +200,67 @@ function openMedia(type, src) {
   modal.style.display = 'flex';
 }
 
+function openLinksModal() {
+
+  const instagramLinks = [
+    {
+      title: "Reel – InfySolutions",
+      desc: "Promoção de Painéis LED",
+      url: "https://www.instagram.com/p/DRkg1_aDNcd/"
+    },
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Promoção de MicroServidores",
+      url: "https://www.instagram.com/p/DRMgIm0iAqG/"
+    },
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Promoção de MicroServidores",
+      url: "https://www.instagram.com/p/DSU_Gb5CBXw/"
+    }
+  ];
+
+
+  const modal = document.getElementById("projectModal");
+  const modalContent = modal.querySelector(".modal-content");
+  const gallery = modal.querySelector(".modal-gallery");
+
+  // Esconder galeria
+  gallery.style.display = "none";
+
+  // Remover conteúdo dinâmico anterior
+  modalContent.querySelector(".dynamic-content")?.remove();
+
+  // Criar conteúdo
+  const wrapper = document.createElement("div");
+  wrapper.className = "dynamic-content modal-links";
+
+  wrapper.innerHTML = `
+    <h3 class="modal-title">Instagram</h3>
+    <p class="modal-subtitle">Reels e trabalhos no digital</p>
+
+    <div class="links-grid">
+      ${instagramLinks
+      .map(
+        (item) => `
+        <a href="${item.url}" target="_blank" class="link-card">
+          <span>📸</span>
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.desc}</small>
+          </div>
+        </a>
+      `
+      )
+      .join("")}
+    </div>
+  `;
+
+  modalContent.appendChild(wrapper);
+  modal.style.display = "flex";
+}
+
+
 function closeModal() {
   document.getElementById('mediaModal').style.display = 'none';
   document.getElementById('mediaContainer').innerHTML = '';
