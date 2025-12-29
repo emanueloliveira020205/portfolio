@@ -217,6 +217,16 @@ function openLinksModal() {
       title: "Reel – Glacier Systems",
       desc: "Promoção de MicroServidores",
       url: "https://www.instagram.com/p/DSU_Gb5CBXw/"
+    },
+    {
+      title: "Reel – InfySolutions",
+      desc: "Especial de Natal",
+      url: "https://www.instagram.com/reel/DSpfhqojMpA/"
+    },
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Especial de Natal",
+      url: "https://www.instagram.com/p/DSnROGFDsld/"
     }
   ];
 
