@@ -278,4 +278,4 @@ function closeModal() {
 // Console message for developers
 console.log("%c👋 Olá, desenvolvedor!", "font-size: 20px; font-weight: bold; color: #0071e3;")
 console.log("%cGostou do código? Vamos trabalhar juntos!", "font-size: 14px; color: #6e6e73;")
-console.log("%cemanuel@example.com", "font-size: 14px; color: #0071e3;")
+console.log("%cemanueloliveira2205@hotmail.com", "font-size: 14px; color: #0071e3;")
