@@ -114,6 +114,13 @@ function openGallery(id) {
 
   document.body.style.overflow = 'hidden';
   const modal = document.getElementById('projectModal');
+
+  // remover conteúdo dinâmico se existir e mostrar a galeria
+  const modalContent = modal.querySelector('.modal-content');
+  modalContent.querySelector('.dynamic-content')?.remove();
+  const gallery = modal.querySelector('.modal-gallery');
+  if (gallery) gallery.style.display = '';
+
   updateMedia();
   modal.style.display = 'flex';
 }
@@ -123,9 +130,17 @@ function closeGallery() {
   modal.style.display = 'none';
   document.body.style.overflow = '';
 
-  // Pausar vídeo se estiver ativo
-  const video = document.querySelector('#modalVideo');
-  if (video) video.pause();
+  // garantir galeria visível e remover conteúdo dinâmico (se houver)
+  const gallery = modal.querySelector('.modal-gallery');
+  if (gallery) gallery.style.display = '';
+  modal.querySelector('.dynamic-content')?.remove();
+
+  // Pausar/reset do vídeo se estiver ativo
+  const video = modal.querySelector('#modalVideo');
+  if (video) {
+    video.pause();
+    video.currentTime = 0;
+  }
 }
 
 function nextImage() {
@@ -202,7 +217,19 @@ function openMedia(type, src) {
 
 function openLinksModal() {
 
+  document.body.style.overflow = 'hidden';
+
   const instagramLinks = [
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Backups de Emails",
+      url: "https://www.instagram.com/p/DUS4QBJgSCx/"
+    },
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Empresário Pro ou Amador?",
+      url: "https://www.instagram.com/p/DVa-ljviS-k/"
+    },
     {
       title: "Reel – InfySolutions",
       desc: "Promoção de Painéis LED",
@@ -227,6 +254,11 @@ function openLinksModal() {
       title: "Reel – Glacier Systems",
       desc: "Especial de Natal",
       url: "https://www.instagram.com/p/DSnROGFDsld/"
+    },
+    {
+      title: "Reel – Glacier Systems",
+      desc: "Como começar uma Empresa",
+      url: "https://www.instagram.com/p/DTxgzq0CcLh/"
     }
   ];
 
