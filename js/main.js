@@ -307,6 +307,15 @@ function closeModal() {
   document.getElementById('mediaModal').style.display = 'none';
   document.getElementById('mediaContainer').innerHTML = '';
 }
+
+function switchLanguage() {
+  // Detecta se estamos no index.html (English) ou no português
+  if (window.location.pathname.endsWith("index.html")) {
+    window.location.href = "index-pt.html"; // muda para português
+  } else {
+    window.location.href = "index.html"; // muda para inglês
+  }
+}
 // Console message for developers
 console.log("%c👋 Olá, desenvolvedor!", "font-size: 20px; font-weight: bold; color: #0071e3;")
 console.log("%cGostou do código? Vamos trabalhar juntos!", "font-size: 14px; color: #6e6e73;")

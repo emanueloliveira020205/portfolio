@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emanuel Oliveira - Developer & Digital Creator</title>
+    <title>Emanuel Oliveira - Desenvolvedor e Criador Digital</title>
     <meta name="description"
-        content="Portfolio of Emanuel Oliveira - Developer and digital creator specialized in digital solutions, Linux systems, and interactive experiences.">
+        content="Portfolio de Emanuel Oliveira - Desenvolvedor e criador digital especializado em soluções digitais, sistemas Linux e experiências interativas.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,19 +21,24 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">Emanuel Oliveira</a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#gallery">Videos</a>
-                <a href="#contact">Contact</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#galeria">Vídeo</a>
+                <a href="#contacto">Contacto</a>
 
                 <button class="btn-language" onclick="switchLanguage()">
-                    <span class="flag-portugal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 512 512">
-                            <rect width="512" height="512" fill="#006600" />
-                            <rect width="170.7" height="512" fill="#ff0000" />
-                            <circle cx="170.7" cy="256" r="60" fill="#ffcc00" />
-                        </svg></span> PT
+                    <span class="flag-england"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30"
+                            height="15">
+                            <!-- Fundo branco -->
+                            <rect width="60" height="30" fill="#fff" />
+                            <!-- Cruz vermelha -->
+                            <rect x="25" width="10" height="30" fill="#C8102E" />
+                            <rect y="10" width="60" height="10" fill="#C8102E" />
+                        </svg></span> EN
                 </button>
+                <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>-->
             </div>
         </div>
     </nav>
@@ -42,59 +47,60 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <p class="hero-greeting">Hi, I'm</p>
+                <p class="hero-greeting">Olá, sou o</p>
                 <h1 class="hero-title">Emanuel Oliveira</h1>
-                <p class="hero-subtitle">Developer & Digital Creator</p>
-                <p class="hero-description">I create digital solutions, Linux systems, and interactive experiences
-                    with a minimalist touch.</p>
-                <a href="#projects" class="btn-primary">See Projects</a>
+                <p class="hero-subtitle">Desenvolvedor e criador digital</p>
+                <p class="hero-description">Crio soluções digitais, sistemas Linux e experiências interativas com um
+                    toque minimalista.</p>
+                <a href="#projetos" class="btn-primary">Ver Projetos</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="sobre">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title">Sobre Mim</h2>
             </div>
             <div class="about-content fade-in">
                 <p class="about-text">
-                    I'm a developer passionate about technology! If there’s a <strong>USB-C</strong> port, I probably
-                    love it! My main focus is <strong>frontend</strong> and <strong>web development</strong>. I work
-                    with <strong>PHP</strong>, <strong>JavaScript</strong>, and <strong>Node.js</strong>, but I’m always
-                    eager to learn new frameworks.
+                    Sou um desenvolvedor apaixonado por tecnologia! Se existir uma porta <strong>USB-C</strong>,
+                    provavelmente já adoro! O meu foco principal é o <strong>frontend</strong> e o <strong>web
+                        development</strong>.
+                    Trabalho com <strong>PHP</strong>, <strong>JavaScript</strong> e <strong>Node.js</strong>, mas estou
+                    sempre disposto a evoluir e a conhecer novas frameworks.
                 </p>
                 <p class="about-text">
-                    I also have solid knowledge in <strong>Linux</strong> (despite the occasional headaches it
-                    brings...). I gained experience in <strong>electronics</strong> assembling LED panels, but…
-                    honestly, I don’t like getting my hands dirty! 😉
+                    Tenho diversos conhecimentos em <strong>Linux</strong> (apesar das dores de cabeça que às vezes
+                    traz...). Adquiri experiência em <strong>eletrónica</strong> com a assemblagem de painéis LED,
+                    mas... pronto, não gosto de sujar as mãos! 😉
                 </p>
                 <p class="about-text">
-                    Outside the *shell*, I enjoy exploring <strong>social media</strong> and dedicating myself to
-                    <strong>video editing</strong>. Creativity never stops!
+                    Fora da *shell*, gosto de explorar <strong>redes sociais</strong> e dedicar-me à <strong>edição de
+                        vídeo</strong>. A criatividade nunca para!
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section class="projects" id="projetos">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-description">A selection of my recent work</p>
+                <h2 class="section-title">Projetos</h2>
+                <p class="section-description">Uma seleção dos meus trabalhos recentes</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="img/4cows_login.png" alt="Project 1">
+                        <img src="img/4cows_login.png" alt="Projeto 1">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Dairy Management System</h3>
-                        <p class="project-description">Complete PHP platform for managing dairies. This was my final
-                            project for school, earning a top grade and 2nd place in the national competition of PAPs.
-                        </p>
+                        <h3 class="project-title">Sistema de Gestão de Vacarias</h3>
+                        <p class="project-description">Plataforma completa desenvolvida em PHP para gestão de Vacarias.
+                            Foi a minha Prova de Aptidão Profissional e valeu-me uma nota de 20 valores e o 2º Lugar no
+                            concurso nacional de PAPs, PAPTICE</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
                             <span class="tag">JavaScript</span>
@@ -102,42 +108,45 @@
                             <span class="tag">CSS</span>
                             <span class="tag">MySQL</span>
                         </div>
-                        <a href="#" class="project-link" onclick="openGallery(1)">See Project →</a>
+                        <a href="#" class="project-link" onclick="openGallery(1)">Ver Projeto →</a>
                     </div>
                 </div>
 
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="img/scoreboard.jpg" alt="Project 2">
+                        <img src="img/scoreboard.jpg" alt="Projeto 2">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Controlboard + LED Scoreboard</h3>
-                        <p class="project-description">Node.js backend to control a sports scoreboard on LED panels.
-                            Real-time communication via AJAX.</p>
+                        <h3 class="project-title">Controlboard + Scoreboard para Painéis LED</h3>
+                        <p class="project-description"> Backend em Node.js para controlar um marcador desportivo em
+                            painéis LED. Node.js no backend com comunicação por ajax para comunicação em tempo real.
+                        </p>
                         <div class="project-tags">
                             <span class="tag">Node.js</span>
                             <span class="tag">JavaScript</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="#" class="project-link" onclick="openGallery(2)">See Project →</a>
+                        <a href="#" class="project-link" onclick="openGallery(2)">Ver Projeto →</a>
                     </div>
                 </div>
 
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="img/gs-server.png" alt="Project 3">
+                        <img src="img/gs-server.png" alt="Projeto 3">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Linux Server Controller</h3>
-                        <p class="project-description">Web interface to manage LXC containers, network interfaces, VPN
-                            users, and system monitoring on a Linux server.</p>
+                        <h3 class="project-title">Controlador de Servidor Linux</h3>
+                        <p class="project-description">Interface Web para gerir containers LXC, interfaces de rede,
+                            utilizadores VPN
+                            e monitorização de sistema em Servidor Linux também fabricado.
+                        </p>
                         <div class="project-tags">
                             <span class="tag">Linux</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">JavaScript</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="#" class="project-link" onclick="openGallery(3)">See Project →</a>
+                        <a href="#" class="project-link" onclick="openGallery(3)">Ver Projeto →</a>
                     </div>
                 </div>
             </div>
@@ -145,85 +154,105 @@
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class=" project-image">
-                        <img src="img/glacierSystems.png" alt="Project 4">
+                        <img src="img/glacierSystems.png" alt="Projeto 4">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Glacier Systems Website</h3>
-                        <p class="project-description">Website for Glacier Systems, the company I work with.</p>
+                        <h3 class="project-title">Website Glacier Systems</h3>
+                        <p class="project-description">Website para a empresa Glacier Systems, da qual faço parte</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
                             <span class="tag">JavaScript</span>
                             <span class="tag">CSS</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="https://glacier.systems" target="_blank" class="project-link">Visit Website →</a>
+                        <a href="https://glacier.systems" target="_blank" class="project-link">Visitar Website →</a>
                     </div>
                 </div>
 
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="img/pedro.png" alt="Project 5">
+                        <img src="img/pedro.png" alt="Projeto 4">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Personal Trainer Website - Pedro Moreira</h3>
-                        <p class="project-description">Website for personal trainer/influencer Pedro Moreira.</p>
+                        <h3 class="project-title">Website Personal Trainer - Pedro Moreira</h3>
+                        <p class="project-description">Website para o personal trainer/influencer Pedro Moreira</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
                             <span class="tag">JavaScript</span>
                             <span class="tag">CSS</span>
                             <span class="tag">HTML</span>
                         </div>
-                        <a href="https://www.pedro-moreira.pt/" target="_blank" class="project-link">Visit Website →</a>
+                        <a href="https://www.pedro-moreira.pt/" target="_blank" class="project-link">Visitar
+                            Website →</a>
                     </div>
                 </div>
+
+                <!-- <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="img/battista.png" alt="Projeto 4">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Website Influencer Battista</h3>
+                    <p class="project-description">Website para o influencer Battista (@thisisbattista)</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">HTML</span>
+                    </div>
+                    <a href="https://www.pedro-moreira.pt/" target="_blank" class="project-link">Visitar
+                        Website →</a>
+                </div>-->
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <section class="gallery" id="galeria">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Social Media</h2>
-                <p class="section-description">My Work in the Digital Space</p>
+                <h2 class="section-title">Redes Sociais</h2>
+                <p class="section-description">Os meus Trabalhos no Digital</p>
             </div>
 
             <div class="gallery-grid">
                 <div class="gallery-item fade-in video-item"
                     onclick="openMedia('youtube', 'https://www.youtube.com/embed/Yfk-Su9zAHQ')">
-                    <img src="img/video_thumb1.png" alt="YouTube Video">
+                    <img src="img/video_thumb1.png" alt="Vídeo YouTube">
                     <div class="play-overlay">
                         <div class="play-icon">▶</div>
                     </div>
                 </div>
 
+                <!-- Vídeo do YouTube -->
                 <div class="gallery-item fade-in video-item"
                     onclick="openMedia('youtube', 'https://www.youtube.com/embed/SsZJa0thusw')">
-                    <img src="img/video_thumb2.png" alt="YouTube Video">
+                    <img src="img/video_thumb2.png" alt="Vídeo YouTube">
                     <div class="play-overlay">
                         <div class="play-icon">▶</div>
                     </div>
                 </div>
             </div>
 
-            <div class="gallery-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="gallery-grid" style=" grid-template-columns: repeat(3, 1fr);">
+                <!-- Reel do Instagram -->
                 <div class="gallery-item fade-in video-item"
                     onclick="openMedia('reel', 'https://www.youtube.com/embed/FwhxxgQqddA')">
-                    <img src="img/reel_thumb2.png" alt="Instagram Reel">
+                    <img src="img/reel_thumb2.png" alt="Reel Instagram">
                     <div class="play-overlay">
                         <div class="play-icon">▶</div>
                     </div>
                 </div>
                 <div class="gallery-item fade-in video-item"
                     onclick="openMedia('reel', 'https://www.youtube.com/embed/TRubPTnK9m4')">
-                    <img src="img/reel_thumb1.png" alt="Instagram Reel">
+                    <img src="img/reel_thumb1.png" alt="Reel Instagram">
                     <div class="play-overlay">
                         <div class="play-icon">▶</div>
                     </div>
                 </div>
                 <div class="gallery-item fade-in video-item"
                     onclick="window.open('https://www.instagram.com/p/DVJmd-2EoZZ/', '_blank')">
-                    <img src="img/video_thumbIman.png" alt="Instagram Reel">
+                    <img src="img/video_thumbIman.png" alt="Reel Instagram">
                     <div class="play-overlay">
                         <div class="play-icon">▶</div>
                     </div>
@@ -231,13 +260,14 @@
             </div>
             <div class="gallery-actions fade-in">
                 <button class="btn-social" onclick="openLinksModal()">
-                    See all my work
+                    Vê todos os meus Trabalhos
                 </button>
             </div>
         </div>
+
     </section>
 
-    <!-- Media Modal -->
+    <!-- Modal (usa o mesmo que já tinhas, mas com suporte multimédia) -->
     <div class="modal" id="mediaModal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal()"></button>
@@ -246,27 +276,29 @@
     </div>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contacto">
         <div class="container">
             <div class="contact-content fade-in">
-                <h2 class="contact-title">Let's work together!</h2>
-                <p class="contact-description">I'm always available for new projects and collaborations.</p>
-                <a href="mailto:emanueloliveira2205@hotmail.com" class="btn-primary">Send Email</a>
+                <h2 class="contact-title">Vamos trabalhar juntos?</h2>
+                <p class="contact-description">Estou sempre disponível para novos projetos e colaborações.</p>
+                <a href="mailto:emanueloliveira2205@hotmail.com" class="btn-primary">Enviar Email</a>
             </div>
         </div>
     </section>
 
-    <!-- Project Modal -->
+
+    <!-- Modal -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeGallery()"></span>
             <div class="modal-gallery">
                 <button class="prev-btn" onclick="prevImage()"></button>
-                <img id="modalImage" src="" alt="Project Image">
+                <img id="modalImage" src="" alt="Imagem do Projeto">
                 <button class="next-btn" onclick="nextImage()"></button>
             </div>
         </div>
     </div>
+
 
     <!-- Footer -->
     <footer class="footer">

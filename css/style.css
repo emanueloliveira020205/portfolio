@@ -865,6 +865,31 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Botão de mudança de idioma */
+.btn-language {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* espaço entre bandeira e texto */
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #333333; /* cor do botão */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-language svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-language:hover {
+  background-color: #555555; /* leve destaque ao passar o mouse */
+}
+
 @keyframes scaleIn {
   from {
     transform: scale(0.95);
